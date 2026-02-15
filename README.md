@@ -13,6 +13,7 @@ Fuse Sentinel-5P satellite data (NO2, CO, Aerosol Index), social media (CLIP + L
 Drishti-AI/
 ├── config/           # ROI, landmarks
 ├── data/             # satellite .pt, CPCB, social CSV (gitignored)
+├── notebooks/        # Jupyter: overview, data pipelines, model + visualizations
 ├── src/
 │   ├── pipeline/     # Phase 1: GEE → 64×64 grid → .pt
 │   ├── social/       # Phase 2: Twitter + NER + CLIP → CSV
@@ -35,6 +36,7 @@ Drishti-AI/
 - **Offline ETL (batch):** `python scripts/run_offline_pipeline.py --days 30` — historical window; run on a schedule to refresh training data.
 - **Online ETL (inference):** `python scripts/run_online_pipeline.py` — latest day(s) for inference or CL update.
 - **Phase 4:** `streamlit run src/app/streamlit_demo.py` — run the demo app (after model + data exist).
+- **Notebooks:** Open `notebooks/01_project_overview_and_architecture.ipynb`, `02_data_pipelines_and_etl.ipynb`, `03_model_and_predictions.ipynb` for walkthroughs and visualizations (ROI map, pipeline flow, channel heatmaps, PM2.5 prediction maps).
 
 ## Data pipelines (ETL)
 
